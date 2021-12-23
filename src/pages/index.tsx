@@ -12,9 +12,9 @@ const formatString = (string: string) =>
   string.split(/\n/).map((line, i) => <span key={i}>{line}</span>);
 
 const assholeBtn =
-  'bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition w-full';
+  'bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-4 rounded transition w-full';
 const notAssholeBtn =
-  'bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition w-full';
+  'bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-4 rounded transition w-full';
 
 const Home: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -24,12 +24,12 @@ const Home: NextPage = () => {
 
   const post = data[currentIndex];
   return (
-    <section className="min-h-screen w-screen flex flex-col items-center pt-10">
+    <section className="min-h-screen w-screen flex flex-col items-center sm:pt-10">
       <article className="flex flex-col max-w-3xl h-min-80 border border-grey-100 rounded border-opacity-30">
         <div className="">
-          <div className="flex justify-between border-b border-grey-70 border-opacity-20 p-3">
-            <span className="text-2xl">{post.title}</span>
-            <span className="">{post.author}</span>
+          <div className="flex flex-col border-b border-grey-70 border-opacity-20 p-3">
+            <span className="text-2xl mb-2">{post.title}</span>
+            <span className="self-end">{post.author}</span>
           </div>
           <div className="p-3 whitespace-pre-line">{post.selftext}</div>
         </div>

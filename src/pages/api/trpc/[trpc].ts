@@ -20,7 +20,7 @@ const appRouter = trpc.router().query('GET_POSTS', {
     const { data } = await getPosts;
     const response = data.map((item: any) => {
       return {
-        selftext: decodeURIComponent(item.selftext),
+        selftext: item.selftext,
         title: item.title,
         author: `/u/${item.author}`
       };
