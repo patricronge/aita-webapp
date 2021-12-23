@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   const { data } = trpc.useQuery(['GET_POSTS']);
 
   if (!data) return <span>Loading</span>;
-  console.log(data);
+
   const post = data[currentIndex];
   return (
     <section className="min-h-screen w-screen flex flex-col items-center pt-10">
